@@ -17,3 +17,9 @@ Bu depo sadece ikili model dosyalarını barındırır, kaynak kod içermez.
   Değişiklik: FP32 ağırlıklar fp16'ya yuvarlanıp SentencePiece parçalarıyla tek dosyada birleştirildi.
   Karşılık gelen kaynak: özgün ağırlıklar (yukarıdaki bağlantı) + bu klasördeki dönüştürme betikleri
   (`pt_extract.py` → `spm_extract.py` → `build_vime_pack.py`).
+
+### Parçalar (`lang-packs/parts/`)
+
+Aynı dosyaların 19 MB'lık parçaları (`split -b 19922944 -d -a 2`; `cat *.part* >` ile birleşir, bayt bayt aynı).
+GitHub'a erişilemeyen yerlerde (ör. Çin) uygulama bunları jsDelivr üzerinden indirir; jsDelivr tek dosyada
+20 MB üstünü vermiyor.
