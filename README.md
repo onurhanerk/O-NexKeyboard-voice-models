@@ -10,3 +10,10 @@ Bu depo sadece ikili model dosyalarını barındırır, kaynak kod içermez.
   (`ggml-model-Q5_K_M.gguf`), lisans **CC BY-SA 4.0**. Değişiklik: resmi llama.cpp'nin yükleyebilmesi
   için GGUF meta verisindeki `tokenizer.ggml.pre` değeri `gpt2-small-japanese-char` → `gpt-2` yapıldı;
   ağırlıklar aynı.
+- `zh-vimeml-tiny-v1.bin` — Çince pinyin adaylarını bağlama göre yeniden sıralama (OBoard "Gelişmiş dönüşüm").
+  Kaynak: [Voltline/vimeml-tiny-zh-v1](https://huggingface.co/Voltline/vimeml-tiny-zh-v1)
+  (`inference/weights.pt`, `inference/tokenizer.model`), lisans **GPL-3.0-or-later** + uygulama mağazası istisnası
+  (`lang-packs/zh-vimeml/LICENSE`, `LICENSE-EXCEPTION`); eğitim verisi atfı `lang-packs/zh-vimeml/NOTICE.md`.
+  Değişiklik: FP32 ağırlıklar fp16'ya yuvarlanıp SentencePiece parçalarıyla tek dosyada birleştirildi.
+  Karşılık gelen kaynak: özgün ağırlıklar (yukarıdaki bağlantı) + bu klasördeki dönüştürme betikleri
+  (`pt_extract.py` → `spm_extract.py` → `build_vime_pack.py`).
