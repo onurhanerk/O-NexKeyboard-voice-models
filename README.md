@@ -2,3 +2,11 @@
 
 OBoard (O-NexKeyboard) uygulamasının sesli yazma özelliği için sherpa-onnx streaming ASR model dosyaları.
 Bu depo sadece ikili model dosyalarını barındırır, kaynak kod içermez.
+
+## Dil paketleri (`lang-packs/`)
+
+- `ja-zenz-v3.1-small.gguf` — Japonca gelişmiş kana → kanji dönüşümü (OBoard "Gelişmiş dönüşüm").
+  Kaynak: [Miwa-Keita/zenz-v3.1-small-gguf](https://huggingface.co/Miwa-Keita/zenz-v3.1-small-gguf)
+  (`ggml-model-Q5_K_M.gguf`), lisans **CC BY-SA 4.0**. Değişiklik: resmi llama.cpp'nin yükleyebilmesi
+  için GGUF meta verisindeki `tokenizer.ggml.pre` değeri `gpt2-small-japanese-char` → `gpt-2` yapıldı;
+  ağırlıklar aynı.
